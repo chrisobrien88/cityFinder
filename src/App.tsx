@@ -1,25 +1,29 @@
-import React from 'react';
+import { useState, useContext } from 'react';
+import { GameStateProvider } from './Context/GameContext';
 import logo from './logo.svg';
 import './App.css';
+import Map from './components/Map';
+import StartGame from './components/StartGame';
+
+import Button from '@mui/material/Button';
+import Chip from '@mui/material/Chip';
+
+import { Container } from '@mui/material';
 
 function App() {
+
+  const [playerReady, setPlayerReady] = useState<boolean>(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      // {!playerReady? <StartGame setPlayerReady={setPlayerReady}/> :
+      <>
+      <GameStateProvider>
+        <Button variant="contained">Hello World</Button>
+        <Chip label="Score" />
+        <Map/>
+      </GameStateProvider>
+      </>
+      
   );
 }
 
