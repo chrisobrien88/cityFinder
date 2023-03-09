@@ -8,7 +8,7 @@ import { ICity, IMarkerType } from '../types/GameTypes';
         setScore: (score: number) => {},
         gameOver: false,
         setGameOver: (gameOver: boolean) => {},
-        markersVisible: true,
+        markersVisible: false,
         setMarkersVisible: (markersVisible: boolean) => {},
         marker: { lat: 0.0000, lng: 0.0000 },
         setMarker: (marker: IMarkerType) => {},
@@ -16,6 +16,12 @@ import { ICity, IMarkerType } from '../types/GameTypes';
         setDistance: (distance: number) => {},
         cityCount: 0,
         setCityCount: (cityCount: number) => {},
+        welcomeDialogOpen: false,
+        setWelcomeDialogOpen: (welcomeDialogOpen: boolean) => {},
+        scoreUpdateDialogOpen: false,
+        setScoreUpdateDialogOpen: (scoreUpdateDialogOpen: boolean) => {},
+        gameOverDialogOpen: false,
+        setGameOverDialogOpen: (gameOverDialogOpen: boolean) => {},
     });
 
     export const useGameState = () => {
@@ -26,10 +32,13 @@ import { ICity, IMarkerType } from '../types/GameTypes';
         const [findCity, setFindCity] = useState<ICity>({ name: '', position: { lat: 0.0000, lng: 0.0000 } });
         const [score, setScore] = useState<number>(1500);
         const [gameOver, setGameOver] = useState<boolean>(false);
-        const [markersVisible, setMarkersVisible] = useState<boolean>(true);
+        const [markersVisible, setMarkersVisible] = useState<boolean>(false);
         const [marker, setMarker] = useState<IMarkerType>({ lat: 0.0000, lng: 0.0000 });
         const [distance, setDistance] = useState<number>(0);
         const [cityCount, setCityCount] = useState<number>(0);
+        const [welcomeDialogOpen, setWelcomeDialogOpen] = useState<boolean>(true);
+        const [scoreUpdateDialogOpen, setScoreUpdateDialogOpen] = useState<boolean>(false);
+        const [gameOverDialogOpen, setGameOverDialogOpen] = useState<boolean>(false);
 
       
         return (
@@ -47,7 +56,14 @@ import { ICity, IMarkerType } from '../types/GameTypes';
             distance, 
             setDistance, 
             cityCount, 
-            setCityCount }}>
+            setCityCount,
+            welcomeDialogOpen,
+            setWelcomeDialogOpen,
+            scoreUpdateDialogOpen,
+            setScoreUpdateDialogOpen,
+            gameOverDialogOpen,
+            setGameOverDialogOpen,
+            }}>
               {children}
           </GameContext.Provider>
         );
