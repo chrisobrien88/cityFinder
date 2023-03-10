@@ -27,6 +27,7 @@ const ScoreBoard = () => {
         alignItems: "center",
         width: "100%",
         textAlign: "center",
+        flexWrap: "wrap",  
       }}
     >
       <Button onClick={() => setWelcomeDialogOpen(true)}>Rules</Button>
@@ -36,6 +37,7 @@ const ScoreBoard = () => {
           "&:hover": {
             backgroundColor: "primary.main",
             opacity: [0.9, 0.8, 0.7],
+            margin: "10px",
           },
         }}
       >
@@ -48,6 +50,7 @@ const ScoreBoard = () => {
           width: 100,
           backgroundColor: "green",
           color: "white",
+          margin: "10px",
         }}
       >
         <Typography variant="body1">Score </Typography>
@@ -62,6 +65,7 @@ const ScoreBoard = () => {
           alignItems: "center",
           textAlign: "center",
           maxWidth: "400px",
+          margin: "10px",
         }}
       >
         <FavoriteIcon sx={{ color: "pink" }} />
