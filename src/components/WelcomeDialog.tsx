@@ -48,6 +48,7 @@ const WelcomeDialog = () => {
   const stepsLength = steps.length;
 
   const handleNext = () => {
+    console.log(activeStep, stepsLength, "steps");
     if (activeStep === stepsLength - 1) {
       return;
     }
@@ -69,6 +70,9 @@ const WelcomeDialog = () => {
     setMarkersVisible(false);
     setWelcomeDialogOpen(false);
   };
+
+ 
+  
 
   return (
     <Dialog
@@ -105,8 +109,8 @@ const WelcomeDialog = () => {
         </Typography>
         <Typography variant="body2">{steps[`${activeStep}`].hint}</Typography>
         <Container>
-          <Button onClick={handleBack}>Back</Button>
-          <Button onClick={handleNext}>Next</Button>
+          {activeStep !== 0 ? <Button onClick={handleBack}>Back</Button> : null}
+          {activeStep !== (stepsLength-1) ? <Button onClick={handleNext}>Next</Button> : null }
         </Container>
         <ProgressBar
           progress={(activeStep / (stepsLength - 1)) * 100}
