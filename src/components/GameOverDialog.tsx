@@ -47,37 +47,41 @@ const GameOverDialog = () => {
           maxWidth: "500px",
           textAlign: "center",
           alignItems: "center",
-        }
-      }}      
+        },
+      }}
       onClose={handleStartGame}
       open={gameOverDialogOpen}
     >
-      
-          <DialogTitle variant="h4">GAME OVER!</DialogTitle>
-          <Divider />
-      {cityCount > 5 ? 
-        <img src={medal} alt="medal" style={
-          {width: "100px", height: "100px"}
-        }/> :
-        <img src={thumbsUp} alt="thumbs up" style={
-          {width: "100px", height: "100px"}
-        }/>
-      }
-      <Box m={2}
-      sx={{
-        borderRadius: "10px",
-        width: 100, 
-        backgroundColor: 'green',
-        color: 'white',
-      }}>
-      <Typography variant="body1">Final Score: </Typography>
-      <Typography variant="h4">{cityCount} </Typography>
-    </Box>
-    <Typography variant="body2">Think you can do better? </Typography>
+      <DialogTitle variant="h4">GAME OVER!</DialogTitle>
+      <Divider />
+      {cityCount > 5 ? (
+        <img
+          src={medal}
+          alt="medal"
+          style={{ width: "100px", height: "100px" }}
+        />
+      ) : (
+        <img
+          src={thumbsUp}
+          alt="thumbs up"
+          style={{ width: "100px", height: "100px" }}
+        />
+      )}
+      <Box
+        m={2}
+        sx={{
+          borderRadius: "10px",
+          width: 100,
+          backgroundColor: "green",
+          color: "white",
+        }}
+      >
+        <Typography variant="body1">Final Score: </Typography>
+        <Typography variant="h4">{cityCount} </Typography>
+      </Box>
+      <Typography variant="body2">Think you can do better? </Typography>
 
       <RestartGameButton />
-
-      
     </Dialog>
   );
 };

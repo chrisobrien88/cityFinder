@@ -1,5 +1,4 @@
 import { useState } from "react";
-import * as React from "react";
 
 import Button from "@mui/material/Button";
 import { useContext } from "react";
@@ -10,18 +9,6 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-
-import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-
-// interface IStepsProps {
-//   label: string;
-//   description: string;
-// }
 
 const steps = [
   {
@@ -122,7 +109,7 @@ const WelcomeDialog = () => {
           <Button onClick={handleNext}>Next</Button>
         </Container>
         <ProgressBar
-          progress={(activeStep / (stepsLength-1)) * 100}
+          progress={(activeStep / (stepsLength - 1)) * 100}
           width={300}
           height={10}
           color="green"
