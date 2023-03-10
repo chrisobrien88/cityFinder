@@ -31,10 +31,6 @@ const GameOverDialog = () => {
     setGameOverDialogOpen(false);
   };
 
-  const handleClose = () => {
-    setGameOverDialogOpen(false);
-  };
-
   return (
     <Dialog
       PaperProps={{

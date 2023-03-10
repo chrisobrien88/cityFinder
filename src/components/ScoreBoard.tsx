@@ -6,7 +6,6 @@ import RestartGamebutton from "./RestartGameButton";
 
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import Box from "@mui/material/Box";
 
 import FavoriteIcon from "@mui/icons-material/Favorite";

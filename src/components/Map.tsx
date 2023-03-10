@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 import { getDistance } from "geolib";
 import { IMarkerType } from "../types/GameTypes";
@@ -9,7 +9,6 @@ import { useContext } from "react";
 import { GameContext } from "../Context/GameContext";
 
 const windowHeight = window.innerHeight;
-const apiKey = process.env.REACT_GOOGLE_MAPS_API_KEY || "YOUR_DEFAULT_API_KEY";
 const Map = () => {
   const { isLoaded } = useLoadScript({
     // I have not used process.env to aovid slowing down setup for people testing the app
