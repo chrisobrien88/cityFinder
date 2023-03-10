@@ -19,8 +19,8 @@ const ScoreBoard = () => {
     <Container
       sx={{
         backgroundColor: "rgb(255, 255, 255, 0.1)",
-        borderRadius: "50px",
-        padding: "10px",
+        paddingTop: "20px",
+        height: "auto",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
