@@ -1,15 +1,7 @@
-# Getting Started with Create React App
+# Padel Mates Code Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The aim of this app is to allow users to play a simple game of guessing where a city is on a map with pre-determined game logic and scoring systems decided on by the devs at padel mates.
+We were advised to only spend 8h on the project but I spent around 13h creating the app - after the initial hurdle of setting up the google map api I was keen to make the UX better (still a long way to go!) and improve the overall style.
 
 ### Gameplay Improvements
 
@@ -31,7 +23,10 @@ Create a local and global leaderboard
 Don't use MUI:
 - it's great for basic prototyping but style editing is messy and clunky.
 
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 
