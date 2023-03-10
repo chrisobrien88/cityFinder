@@ -22,15 +22,16 @@ const Play = () => {
 
   useEffect(() => {
     const newScore = score - distance;
+    const newDistance = distance
     setScore(newScore);
-   console.log(newScore);
-   
+    if (newScore < 1500 && newDistance <= 50) {
+      setCityCount((prev: number) => prev + 1);
+    }
     if (newScore <= 0) {
       setGameOverDialogOpen(true);
       return 
     } 
     if (newScore < 1500) {
-    setCityCount((cityCount: number) => cityCount + 1);
     setScoreUpdateDialogOpen(true);
     }
 

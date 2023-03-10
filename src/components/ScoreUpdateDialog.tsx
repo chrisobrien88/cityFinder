@@ -1,76 +1,96 @@
+import * as React from "react";
 import Button from "@mui/material/Button";
 import { useContext } from "react";
 import { GameContext } from "../Context/GameContext";
 import Dialog from "@mui/material/Dialog";
+import Slide from '@mui/material/Slide';
+import { TransitionProps } from '@mui/material/transitions';
+import plusOne from "../assets/plusOne.png";
+import sadFace from "../assets/sadFace.png";
+
+import Draggable from 'react-draggable';
+import Paper, { PaperProps } from '@mui/material/Paper';
+
 import Typography from "@mui/material/Typography";
-import MobileStepper from "@mui/material/MobileStepper";
-import Divider from "@mui/material/Divider";
 
 import LessSmileyEmoji from '@mui/icons-material/SentimentSatisfiedAlt';
 import MoreSmileyEmoji from '@mui/icons-material/SentimentVerySatisfied';
 
 import { newCity } from "../tools/findNewCity";
 
+const windowWidth = window.innerWidth;
+const windowHeight = window.innerHeight;
+
+const Transition = React.forwardRef(function Transition(
+  props: TransitionProps & {
+    children: React.ReactElement<any, any>;
+  },
+  ref: React.Ref<unknown>,
+) {
+  return <Slide direction="right" ref={ref} {...props} />;
+});
+
+function PaperComponent(props: PaperProps) {
+  return (
+    <Draggable
+      handle="#draggable-dialog-title"
+      cancel={'[class*="MuiDialogContent-root"]'}
+    >
+      <Paper {...props} />
+    </Draggable>
+  );
+}
+
 const ScoreUpdateDialog = () => {
   const {
-    score,
     distance,
     findCity,
     setFindCity,
     scoreUpdateDialogOpen,
     setScoreUpdateDialogOpen,
     setMarkersVisible,
-    cityCount,
+    setMapZoom,
+    setMapCenter,
+    setLabelsVisibility,
+    mapCenter,
   } = useContext<any>(GameContext);
-
-  const handleClose = () => {
-    setScoreUpdateDialogOpen(false);
-  };
 
   const handleNextCity = () => {
   setMarkersVisible(false);
   setScoreUpdateDialogOpen(false);
   setFindCity(newCity());
+  setMapZoom(4);
+  setMapCenter(mapCenter);
+  setLabelsVisibility("off");
 };
   
   return (
-    <Dialog
-    sx={
-      {
-        backgroundColor: "rgb(255, 255, 255, 0.1)",
-    }}
+    <Dialog 
+    TransitionComponent={Transition}
+
+    PaperComponent={PaperComponent}
+    aria-labelledby="draggable-dialog-title"
     PaperProps={{
+      sx: { position: "fixed", top: windowHeight/3, left: -20, m: 0 },
       style: {
-        opacity: 0.7,
         width: "100%",
         backgroundColor: "white",
         color: 'black',
-        borderRadius: "50px",
+        borderRadius: "20px",
+        boxShadow: "none",
         padding: "40px",
-        maxWidth: "500px",
+        maxWidth: "200px",
         textAlign: "center",
       },
     }}
-      onClose={handleClose}
+      onClose={handleNextCity}
       open={scoreUpdateDialogOpen}
       
     >
       {distance >= 50 ? 
-        <LessSmileyEmoji
-          sx={{
-            color: "grey",
-            fontSize: "100px",
-            alignSelf: "center",
-          }}
-        />
+        <img src={sadFace} alt="Image" id="draggable-dialog-title"/>
         : 
-        <MoreSmileyEmoji 
-          sx={{
-            color: "green",
-            fontSize: "150px",
-            alignSelf: "center",
-          }}
-        />
+        <img src={plusOne} alt="Image" id="draggable-dialog-title"/>
       }
         <Typography variant="body1">
           Your guess was
@@ -81,49 +101,14 @@ const ScoreUpdateDialog = () => {
         <Typography variant="h6">
         from {findCity.name}
         </Typography>
-        <Divider 
-        sx={{
-          width: "100%",
-          margin: "20px 0px",
-          backgroundColor: "orange",
-        }}
-        />
-
-        <Typography variant="h6">
-          {score} points remaining
-        </Typography>
-        <MobileStepper
-          variant="progress"
-          steps={1500}
-          position="static"
-          activeStep={score}
-          sx={{
-            flexGrow: 1,
-          }}
-          nextButton={
-            <Button>
-            </Button>
-          }
-          backButton={
-            <Button>
-            </Button>
-          }
-        />
-         <Divider 
-        sx={{
-          width: "100%",
-          margin: "20px 0px",
-          backgroundColor: "orange",
-        }}
-        />
-        <Typography variant="h5"
-        sx={
-          {
-            margin: "20px 0px",
-          }}>
-          Score: {cityCount}
-        </Typography>
-        <Button variant="contained" onClick={handleNextCity}>Next City</Button>
+        <Button variant="contained"
+          sx={
+            {
+              width: "200px",
+              backgroundColor: "green",
+              alignSelf: "center",
+            }
+          } onClick={handleNextCity}>Next City</Button>
     </Dialog>
   );
 };

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import { useContext } from 'react'
 import { GameContext } from '../Context/GameContext'
 import Button from '@mui/material/Button'
@@ -10,17 +9,19 @@ import Typography from '@mui/material/Typography'
 import Chip from '@mui/material/Chip'
 import Box from '@mui/material/Box'
 
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ProgressBar from './ProgressBar'
+
+
 const ScoreBoard = () => {
 
   const {
     findCity,
     score,
-    distance,
     setWelcomeDialogOpen,
+    cityCount,
   } = useContext<any>(GameContext);
-
-
-
+  
   return (
     <Container 
     sx={
@@ -33,22 +34,46 @@ const ScoreBoard = () => {
         justifyContent: "space-between",
         alignItems: "center",
         width: "100%",
-        
         textAlign: "center",
-
     }}
     >
     <Button onClick={()=> (setWelcomeDialogOpen(true))}>Rules</Button>
-    <Box>
-    <Typography variant="body1">Find </Typography>
-    <Chip 
-    color='success'
-    size='medium'
-    label={`${findCity.name}`} />
+    <Box
+      sx={{
+        width: 200,
+        '&:hover': {
+          backgroundColor: 'primary.main',
+          opacity: [0.9, 0.8, 0.7],
+        },
+      }}
+      >
+      <Typography variant="body1">Find </Typography>
+      <Typography variant="h4">{findCity.name} </Typography>
     </Box>
-    <p>Last Guess: {distance}km</p>
-    <p>Points Remaining: {score}/1500</p>
-    
+    <Box
+      sx={{
+        borderRadius: "10px",
+        width: 100, 
+        backgroundColor: 'green',
+        color: 'white',
+      }}>
+      <Typography variant="body1">Score </Typography>
+      <Typography variant="h4">{cityCount} </Typography>
+    </Box>
+
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        maxWidth: "400px",
+      }}
+    >
+      <FavoriteIcon sx={{color: "pink"}}/>
+      <ProgressBar progress={score/1500*100} width={200} height={20} color="pink"/>
+    </Box>
     <RestartGamebutton/>
     </Container>
   )

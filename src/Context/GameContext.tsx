@@ -22,6 +22,12 @@ import { ICity, IMarkerType } from '../types/GameTypes';
         setScoreUpdateDialogOpen: (scoreUpdateDialogOpen: boolean) => {},
         gameOverDialogOpen: false,
         setGameOverDialogOpen: (gameOverDialogOpen: boolean) => {},
+        mapCenter: { lat: 54.526, lng: 15.2551 },
+        setMapCenter: (mapCenter: IMarkerType) => {},
+        mapZoom: 4,
+        setMapZoom: (mapZoom: number) => {},
+        labelsVisibility: "off",
+        setLabelsVisibility: (labelsVisibility: string) => {},
     });
 
     export const useGameState = () => {
@@ -39,6 +45,10 @@ import { ICity, IMarkerType } from '../types/GameTypes';
         const [welcomeDialogOpen, setWelcomeDialogOpen] = useState<boolean>(true);
         const [scoreUpdateDialogOpen, setScoreUpdateDialogOpen] = useState<boolean>(false);
         const [gameOverDialogOpen, setGameOverDialogOpen] = useState<boolean>(false);
+        const [mapCenter, setMapCenter] = useState<IMarkerType>({ lat: 54.526, lng: 15.2551 });
+        const [mapZoom, setMapZoom] = useState<number>(4);
+        const [labelsVisibility, setLabelsVisibility] = useState<string>("off");
+
 
       
         return (
@@ -63,6 +73,12 @@ import { ICity, IMarkerType } from '../types/GameTypes';
             setScoreUpdateDialogOpen,
             gameOverDialogOpen,
             setGameOverDialogOpen,
+            mapCenter,
+            setMapCenter,
+            mapZoom,
+            setMapZoom,
+            labelsVisibility,
+            setLabelsVisibility,
             }}>
               {children}
           </GameContext.Provider>

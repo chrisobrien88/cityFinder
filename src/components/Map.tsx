@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
 import { getDistance } from "geolib";
 import { IMarkerType } from "../types/GameTypes";
@@ -9,10 +9,10 @@ import { useContext } from "react";
 import { GameContext } from "../Context/GameContext";
 
 const windowHeight = window.innerHeight;
-
+const apiKey = process.env.REACT_GOOGLE_MAPS_API_KEY || 'YOUR_DEFAULT_API_KEY';
 const Map = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCtblkRv8R718y6JHo4ZmOp2TwLoIrdzIc",
+    googleMapsApiKey: "AIzaSyCtblkRv8R718y6JHo4ZmOp2TwLoIrdzIc"
   });
 
   const {
@@ -23,9 +23,13 @@ const Map = () => {
     marker,
     setMarker,
     setDistance,
+    mapCenter,
+    setMapCenter,
+    mapZoom,
+    setMapZoom,
+    labelsVisibility,
+    setLabelsVisibility,
   } = useContext<any>(GameContext);
-
-  const centerMarker = { lat: 54.526, lng: 15.2551 }
 
   useEffect(() => {
     setFindCity(newCity())
@@ -41,8 +45,29 @@ const Map = () => {
     };
     setMarker(newMarker);
     setMarkersVisible(true);
-    setDistance(Math.round(getDistance(newMarker, findCity.position) / 1000));
+    const newLat = (findCity.position.lat + newMarker.lat) / 2;
+    const newLng = (findCity.position.lng + newMarker.lng) / 2;
+    setMapCenter({ lat: newLat, lng: newLng });
+    const newDistance = Math.round(getDistance(newMarker, findCity.position) / 1000);
+    setDistance(newDistance);
+    setLabelsVisibility("on");
     
+    
+    switch (true) {
+        case (newDistance <= 50):
+            setMapZoom(10);
+            break;
+        case (newDistance <=100):
+            setMapZoom(8);
+            break;
+        case (newDistance <200):
+            setMapZoom(7);
+            break;
+        
+        default:
+            setMapZoom(5);
+            break;
+}
     
   };
 
@@ -51,7 +76,7 @@ const Map = () => {
     styles: [
       {
         elementType: "labels",
-        stylers: [{ visibility: "off" }],
+        stylers: [{ visibility: `${labelsVisibility}` }],
       },
       {
         featureType: "poi",
@@ -69,6 +94,7 @@ const Map = () => {
         featureType: "landscape",
         stylers: [{ visibility: "off" }],
       },
+ 
     ],
   };
 
@@ -80,8 +106,8 @@ const Map = () => {
                 mapContainerStyle={{ height: windowHeight*0.9, width: "100vw"
                     
                 }}
-                center={centerMarker}
-                zoom={5}
+                center={mapCenter}
+                zoom={mapZoom}
                 onClick={handleMapClick}
                 options={mapOptions}
               >
@@ -95,7 +121,7 @@ const Map = () => {
                     lat: findCity.position.lat,
                     lng: findCity.position.lng,
                   }}
-                  icon={"http://maps.google.com/mapfiles/ms/icons/red-dot.png"}
+                  icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"}
                 />
               </GoogleMap>
             

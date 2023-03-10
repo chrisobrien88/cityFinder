@@ -9,7 +9,9 @@ const RestartGameButton = () => {
         setCityCount,
         setGameOver,
         setMarkersVisible,
-        setGameOverDialogOpen
+        setGameOverDialogOpen,
+        setLabelsVisibility,
+        setMapZoom
       } = useContext<any>(GameContext);
     
       const restart = () => {
@@ -19,6 +21,8 @@ const RestartGameButton = () => {
         setDistance(0)
         setMarkersVisible(false)
         setGameOverDialogOpen(false)
+        setLabelsVisibility("off");
+        setMapZoom(4);
       }
   return (
     <Button variant="contained" color="primary" onClick={restart}>Restart</Button>
