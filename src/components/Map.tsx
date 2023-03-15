@@ -13,8 +13,7 @@ const windowHeight = window.innerHeight;
 const Map = () => {
   const { isLoaded } = useLoadScript({
     // I have not used process.env to aovid slowing down setup for people testing the app
-    googleMapsApiKey: apiKey
-    // googleMapsApiKey: "AIzaSyCtblkRv8R718y6JHo4ZmOp2TwLoIrdzIc",
+    googleMapsApiKey: "AIzaSyCtblkRv8R718y6JHo4ZmOp2TwLoIrdzIc",
   });
 
   const {
