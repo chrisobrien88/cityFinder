@@ -8,11 +8,13 @@ import { newCity } from "../tools/findNewCity";
 import { useContext } from "react";
 import { GameContext } from "../Context/GameContext";
 
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY || "api key";
 const windowHeight = window.innerHeight;
 const Map = () => {
   const { isLoaded } = useLoadScript({
     // I have not used process.env to aovid slowing down setup for people testing the app
-    googleMapsApiKey: "AIzaSyCtblkRv8R718y6JHo4ZmOp2TwLoIrdzIc",
+    googleMapsApiKey: apiKey
+    // googleMapsApiKey: "AIzaSyCtblkRv8R718y6JHo4ZmOp2TwLoIrdzIc",
   });
 
   const {

@@ -1,11 +1,9 @@
-import { useState, useContext } from "react";
 import { GameStateProvider } from "./Context/GameContext";
 
 import "./App.css";
 
 import Play from "./pages/Play";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container } from "@mui/material";
 
 
 function App() {
