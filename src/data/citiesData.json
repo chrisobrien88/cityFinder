@@ -1,19 +1,31 @@
-{"cities": 
-    [
-        {"name": "Amsterdam",  "position": {"lat": 52.370216,  "lng": 4.895168}},
-        {"name": "Rome",  "position":{"lat":41.902783,"lng":12.496366  }},
-        {"name": "Helsinki",  "position": {"lat":60.169856,"lng":24.938379  }},
-        {"name": "Stockholm",  "position": {"lat":59.329323,"lng":18.068581  }},
-        {"name": "London",  "position": {"lat": 51.507351,  "lng":-0.127758  }},
-        {"name": "Oslo","position": {"lat":59.913869,"lng":10.752245  }},
-        {"name": "Paris","position": {"lat": 48.856614,  "lng": 2.352222}},
-        {"name": "Vienna","position": {"lat":48.208174,"lng":16.373819  }},
-        {"name": "Budapest",  "position": {"lat":47.497912,"lng":19.040235  }},
-        {"name": "Dublin", "position": {"lat":53.349805,"lng":-6.26031  }},
-        {"name": "Berlin", "position": {"lat":52.520007,"lng":13.404954  }},
-        {"name": "Istanbul", "position":{"lat":41.01384, "lng":28.94966}},
-        {"name": "Moscow", "position":{"lat":55.75222, "lng":37.61556}},
-        {"name": "Madrid", "position":{"lat":40.4165, "lng": -3.70256}},
-        {"name": "Kyiv", "position":{"lat":50.45466, "lng": 30.5238}}
-    ]
+{
+  "cities": [
+    { "name": "Amsterdam", "position": { "lat": 52.370216, "lng": 4.895168 } },
+    { "name": "Rome", "position": { "lat": 41.902783, "lng": 12.496366 } },
+    { "name": "Helsinki", "position": { "lat": 60.169856, "lng": 24.938379 } },
+    { "name": "Stockholm", "position": { "lat": 59.329323, "lng": 18.068581 } },
+    { "name": "London", "position": { "lat": 51.507351, "lng": -0.127758 } },
+    { "name": "Oslo", "position": { "lat": 59.913869, "lng": 10.752245 } },
+    { "name": "Paris", "position": { "lat": 48.856614, "lng": 2.352222 } },
+    { "name": "Vienna", "position": { "lat": 48.208174, "lng": 16.373819 } },
+    { "name": "Budapest", "position": { "lat": 47.497912, "lng": 19.040235 } },
+    { "name": "Dublin", "position": { "lat": 53.349805, "lng": -6.26031 } },
+    { "name": "Berlin", "position": { "lat": 52.520007, "lng": 13.404954 } },
+    { "name": "Istanbul", "position": { "lat": 41.01384, "lng": 28.94966 } },
+    { "name": "Moscow", "position": { "lat": 55.75222, "lng": 37.61556 } },
+    { "name": "Madrid", "position": { "lat": 40.4165, "lng": -3.70256 } },
+    { "name": "Kyiv", "position": { "lat": 50.45466, "lng": 30.5238 } },
+    { "name": "Lisbon", "position": { "lat": 38.71667, "lng": -9.13333 } },
+    { "name": "Bucharest", "position": { "lat": 44.43225, "lng": 26.10626 } },
+    { "name": "Minsk", "position": { "lat": 53.9, "lng": 27.56667 } },
+    { "name": "Brussels", "position": { "lat": 50.85045, "lng": 4.34878 } },
+    { "name": "Sofia", "position": { "lat": 42.69751, "lng": 23.32415 } },
+    { "name": "Zagreb", "position": { "lat": 45.81444, "lng": 15.97798 } },
+    { "name": "Coopenhagen", "position": { "lat": 55.67594, "lng": 12.56553 } },
+    { "name": "Athens", "position": { "lat": 37.98376, "lng": 23.72784 } },
+    { "name": "Luxembourg", "position": { "lat": 49.61167, "lng": 6.13 } },
+    { "name": "Monaco", "position": { "lat": 43.73718, "lng": 7.42145 } },
+    { "name": "zurich", "position": { "lat": 47.36667, "lng": 8.55 } },
+    { "name": "Warsaw", "position": { "lat": 52.22977, "lng": 21.01178 } }
+  ]
 }
