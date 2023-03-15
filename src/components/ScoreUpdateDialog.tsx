@@ -15,7 +15,10 @@ import sadFace from "../assets/sadFace.png";
 
 import { newCity } from "../tools/findNewCity";
 
-const windowHeight = window.innerHeight;
+const windowWidth = window.innerWidth;
+console.log(windowWidth);
+//500px
+
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -81,11 +84,14 @@ const ScoreUpdateDialog = () => {
       onClose={handleNextCity}
       open={scoreUpdateDialogOpen}
     >
-      {distance >= 50 ? (
+      {windowWidth > 500 ? (
+        
+      distance >= 50 ? (
         <img src={sadFace} alt="sad face :(" id="draggable-dialog-title" />
       ) : (
         <img src={plusOne} alt="plus one" id="draggable-dialog-title" />
-      )}
+      ))
+      : null }
       <Typography mt={2} variant="body1">Your guess was</Typography>
       <Typography variant="h3">{distance}km</Typography>
       <Typography mb={2} variant="h6">from {findCity.name}</Typography>
