@@ -7,6 +7,7 @@ import { GameContext } from "../Context/GameContext";
 
 import ScoreUpdateDialog from "../components/ScoreUpdateDialog";
 import GameOverDialog from "../components/GameOverDialog";
+import FindCityDialog from "../components/FindCityDialog";
 
 const Play = () => {
 
@@ -41,6 +42,7 @@ const Play = () => {
     <>
       <WelcomeDialog />
       <ScoreUpdateDialog />
+      <FindCityDialog />
       <GameOverDialog />
       <ScoreBoard />
       <Map />

@@ -31,7 +31,7 @@ const ScoreBoard = () => {
       }}
     >
       <Button onClick={() => setWelcomeDialogOpen(true)}>Rules</Button>
-      <Box
+      {/* <Box
         sx={{
           width: 200,
           "&:hover": {
@@ -43,7 +43,7 @@ const ScoreBoard = () => {
       >
         <Typography variant="body1">Find </Typography>
         <Typography variant="h4">{findCity.name} </Typography>
-      </Box>
+      </Box> */}
       <Box
         sx={{
           borderRadius: "10px",
