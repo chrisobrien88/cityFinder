@@ -10,6 +10,10 @@
         {"name": "Vienna","position": {"lat":48.208174,"lng":16.373819  }},
         {"name": "Budapest",  "position": {"lat":47.497912,"lng":19.040235  }},
         {"name": "Dublin", "position": {"lat":53.349805,"lng":-6.26031  }},
-        {"name": "Berlin", "position": {"lat":52.520007,"lng":13.404954  }}
+        {"name": "Berlin", "position": {"lat":52.520007,"lng":13.404954  }},
+        {"name": "Istanbul", "position":{"lat":41.01384, "lng":28.94966}},
+        {"name": "Moscow", "position":{"lat":55.75222, "lng":37.61556}},
+        {"name": "Madrid", "position":{"lat":40.4165, "lng": -3.70256}},
+        {"name": "Kyiv", "position":{"lat":50.45466, "lng": 30.5238}}
     ]
 }
