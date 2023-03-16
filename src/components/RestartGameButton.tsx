@@ -10,6 +10,7 @@ const RestartGameButton = () => {
     setGameOver,
     setMarkersVisible,
     setGameOverDialogOpen,
+    setScoreUpdateDialogOpen,
     setLabelsVisibility,
     setMapZoom,
   } = useContext<any>(GameContext);
@@ -21,6 +22,7 @@ const RestartGameButton = () => {
     setDistance(0);
     setMarkersVisible(false);
     setGameOverDialogOpen(false);
+    setScoreUpdateDialogOpen(false);
     setLabelsVisibility("off");
     setMapZoom(4);
   };

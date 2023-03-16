@@ -30,6 +30,7 @@ const Play = () => {
     }
     if (newScore <= 0) {
       setGameOverDialogOpen(true);
+      setScoreUpdateDialogOpen(true)
       return 
     } 
     if (newScore < 1500) {

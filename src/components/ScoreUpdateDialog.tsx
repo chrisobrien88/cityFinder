@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useContext } from "react";
 import { GameContext } from "../Context/GameContext";
+import EmojiChooser from "./EmojiChooser";
 
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -12,6 +13,8 @@ import Typography from "@mui/material/Typography";
 
 import plusOne from "../assets/plusOne.png";
 import sadFace from "../assets/sadFace.png";
+import loveFace from "../assets/love.png";
+import cryingFace from "../assets/crying.png";
 
 import { newCity } from "../tools/findNewCity";
 
@@ -63,6 +66,18 @@ const ScoreUpdateDialog = () => {
     setLabelsVisibility("off");
   };
 
+  const chooseEmoji = () => {
+    if (distance <= 50) {
+      return <img src={loveFace} alt="sad face :(" id="draggable-dialog-title" />
+    }
+    if (distance <= 200) {
+      return <img src={sadFace} alt="plus one" id="draggable-dialog-title" />
+    }
+    if (distance > 200) {
+      return <img src={cryingFace} alt="plus one" id="draggable-dialog-title" />
+    }
+  }
+
   return (
     <Dialog
       TransitionComponent={Transition}
@@ -84,13 +99,10 @@ const ScoreUpdateDialog = () => {
       onClose={handleNextCity}
       open={scoreUpdateDialogOpen}
     >
-      {windowWidth > 500 ? (
-        
-      distance >= 50 ? (
-        <img src={sadFace} alt="sad face :(" id="draggable-dialog-title" />
-      ) : (
-        <img src={plusOne} alt="plus one" id="draggable-dialog-title" />
-      ))
+      <>
+     
+      {windowWidth > 500 ? 
+        <EmojiChooser />
       : null }
       <Typography mt={2} variant="body1">Your guess was</Typography>
       <Typography variant="h3">{distance}km</Typography>
@@ -98,7 +110,14 @@ const ScoreUpdateDialog = () => {
 
       {distance > 50 ? 
         <Typography mb={2} variant="body1">Get 50km or lower to score a point</Typography> :
-        <Typography mb={2} variant="body1">Nice! 1 point added to your score!</Typography>
+        <>
+          <img src={plusOne} alt="Love face :D" id="draggable-dialog-title" style={{
+            width: "100px",
+            height: "100px",
+            alignSelf: "center",
+           }} />
+          <Typography mb={2} variant="body1">Nice! 1 point added to your score!</Typography>
+        </>
       }
       <Button
         variant="contained"
@@ -111,6 +130,7 @@ const ScoreUpdateDialog = () => {
       >
         Next City
       </Button>
+      </>
     </Dialog>
   );
 };
