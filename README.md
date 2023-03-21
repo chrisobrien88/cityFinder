@@ -1,7 +1,11 @@
-# Padel Mates Code Test
+# check it out:
 
-The aim of this app is to allow users to play a simple game of guessing where a city is on a map with pre-determined game logic and scoring systems decided on by the devs at padel mates.
-We were advised to only spend 8h on the project but I spent around 13h creating the app - after the initial hurdle of setting up the google map api I was keen to make the UX better (still a long way to go!) and improve the overall style.
+https://city-finder-fltwwrqhd-chrisobrien88.vercel.app/
+
+# Objective
+
+The aim of this app is to allow users to play a simple game of guessing where a city is on a map with pre-determined game logic and scoring systems (not chosen by me).
+We were advised to only spend 8h on the project but I spent around 16h creating the app - after the initial hurdle of setting up the google map api I was keen to make the UX better (still a long way to go!) and improve the overall style.
 
 ### Gameplay Improvements
 
