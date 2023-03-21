@@ -21,7 +21,7 @@
     { "name": "Brussels", "position": { "lat": 50.85045, "lng": 4.34878 } },
     { "name": "Sofia", "position": { "lat": 42.69751, "lng": 23.32415 } },
     { "name": "Zagreb", "position": { "lat": 45.81444, "lng": 15.97798 } },
-    { "name": "Coopenhagen", "position": { "lat": 55.67594, "lng": 12.56553 } },
+    { "name": "Copenhagen", "position": { "lat": 55.67594, "lng": 12.56553 } },
     { "name": "Athens", "position": { "lat": 37.98376, "lng": 23.72784 } },
     { "name": "Luxembourg", "position": { "lat": 49.61167, "lng": 6.13 } },
     { "name": "Monaco", "position": { "lat": 43.73718, "lng": 7.42145 } },
