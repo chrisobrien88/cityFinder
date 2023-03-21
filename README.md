@@ -6,7 +6,7 @@ https://city-finder-fltwwrqhd-chrisobrien88.vercel.app/
 
 To give users a way to flex their geography muscles with the latest and greatest way to put their city-finding skills to the test.
 
-The deals was this: create a game that allows users to guess where a city is on a map. You start on 1500 points but lose points based on how far your guess is from the actual location. If you guess within 50km, you're a winner winner chicken dinner and gain 1 point to your score.
+The deal was this: create a game that allows users to guess where a city is on a map. You start on 1500 points but lose points based on how far your guess is from the actual location. If you guess within 50km, you're a winner winner chicken dinner and gain 1 point to your score.
 
 We were supposed to keep the project down to 8 hours, but I couldn't help myself - I spent 16 hours on the project to make sure everything was looking slick and polished. After all, if you're gonna play a game, it might as well look good.
 
