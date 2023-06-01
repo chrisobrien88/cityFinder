@@ -1,4 +1,4 @@
-# check it out:
+# Check it out:
 
 https://city-finder-fltwwrqhd-chrisobrien88.vercel.app/
 
