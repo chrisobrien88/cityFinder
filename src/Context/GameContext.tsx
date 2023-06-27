@@ -1,7 +1,8 @@
 import { createContext, useContext, useState } from 'react';
 import { ICity, IMarkerType } from '../types/GameTypes';
 
-    export const GameContext = createContext({
+
+    export const GameContext = createContext<any>({
         findCity: { name: '', position: { lat: 0.0000, lng: 0.0000 } },
         setFindCity: (city: ICity) => {},
         score: 1500,
