@@ -37,7 +37,7 @@ const FindCityDialog = () => {
         textAlign: "center",
         position: "fixed",
         bottom: 20,
-        left: `${windowWidth * 0.5 - 200}px`,
+        left: `${windowWidth * 0.5 - 100}px`,
         zIndex: 100,
       }}
     >

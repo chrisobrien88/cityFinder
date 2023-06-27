@@ -1,7 +1,7 @@
 # Check it out:
 
 https://city-finder-fltwwrqhd-chrisobrien88.vercel.app/
-*update* due to inactivity the googlemaps api is no longer functioning properly.
+_update_ due to inactivity the googlemaps api is no longer functioning properly.
 
 # Objective
 
@@ -13,14 +13,29 @@ We were supposed to keep the project down to 8 hours, but I couldn't help myself
 
 Give it a spin (link at top) and let me know what you think. Cheers!
 
+### Screenshots
+
+<img src="./src/assets/find-city-game-start.png" width="400"/>
+</br></br>
+Good guess (within 50km):
+
+<img src="./src/assets/find-city-success.png" width="400"/>
+</br></br>
+Not such a good guess:
+
+<img src="./src/assets/find-city-unsuccessful.png" width="400"/>
+</br></br>
+
 ### Gameplay Improvements
 
 Scoring System changes:
+
 - create a system that rewards players for guessing close to the city rather than penalising them less. e.g. 0km = 500 points 500km+ = 0 points
-- users would get a pre-defined number of goes e.g. 10. 
+- users would get a pre-defined number of goes e.g. 10.
 - or have a set number of lives e.g. 3. They lose a life any time their guess is more than xkm away from the city.
 
 Give difficulty options:
+
 - difficulty of each city can be based on population size
 - give the user the option to toggle parts of the map e.g. roads
 - disable the zoom functionality
@@ -31,12 +46,10 @@ Create a local and global leaderboard
 ### Code Improvements
 
 Don't use MUI:
+
 - it's great for basic prototyping but style editing is messy and clunky.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-
-
