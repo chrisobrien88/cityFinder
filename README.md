@@ -1,7 +1,6 @@
 # Check it out:
 
 https://city-finder-fltwwrqhd-chrisobrien88.vercel.app/
-_update_ due to inactivity the googlemaps api is no longer functioning properly.
 
 # Objective
 
