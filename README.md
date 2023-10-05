@@ -4,7 +4,7 @@ https://city-finder-fltwwrqhd-chrisobrien88.vercel.app/
 
 # Objective
 
-To give users a way to flex their geography muscles with the latest and greatest way to put their city-finding skills to the test.
+A fun way to flex your geography muscles with the latest and greatest way to put their city-finding skills to the test.
 
 The deal was this: create a game that allows users to guess where a city is on a map. You start on 1500 points but lose points based on how far your guess is from the actual location. If you guess within 50km, you're a winner winner chicken dinner and gain 1 point to your score.
 
